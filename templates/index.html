@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whilter AI Text Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Conamore:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="{{ url_for('static', filename='whilter_logo.png') }}" alt="Whilter AI Logo" class="logo">
+            <h1>Whilter AI Text Generator</h1>
+        </header>
+        <main>
+            <textarea id="prompt" placeholder="Type your prompt here..."></textarea>
+            <div class="button-container">
+                <button id="submit-btn">Generate Response</button>
+                <div class="loading-spinner" id="loading-spinner" style="display:none;"></div>
+            </div>
+            <div id="progress-container" style="display:none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+                </div>
+                <div id="progress-text" class="progress-text">0%</div>
+            </div>
+            <h2 id="output-heading" style="display:none;">Here's your refined prompt:</h2>
+            <div id="response" class="response"></div>
+            <div id="error-message" class="error-message"></div>
+            <button id="refresh-btn" style="display:none;">Refresh</button>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
